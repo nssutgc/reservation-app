@@ -16,7 +16,7 @@
 <p>予約内容</p>
 <p>{{ $_POST['user']}} 様</p>
 <p>{{ $_POST['count']}}名様</p>
-<p>{{ $_POST['date_val']}} </p>
+<p>{{ $_POST['date']}} </p>
 <a href="/">トップ</a>
  </div>
 </body>

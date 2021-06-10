@@ -17,10 +17,10 @@
 @csrf
 1.お名前<br>
 <input type="text" name="user"/><br>
-2.電話番号<br>
-<input type="text" id="email"/><br>
+2.メールアドレス<br>
+<input type="text" name="email"/><br>
 3.カレンダーから日付を選択してください<br>
-<input name="date_val" type="text" id="date_val"/><br>
+<input name="date" type="text" id="date"/><br>
 <div id="datepicker"></div><br>
 4.時間を選択してください<br>
     <select name="time">
@@ -43,6 +43,18 @@
     <option value="4">４</option>
     </select>
     <br><br>
+    @if ($errors->has('user'))
+    <p class="text-danger">{{ $errors->first('user') }}</p>
+    @endif
+    @if ($errors->has('email'))
+    <p class="text-danger">{{ $errors->first('email') }}</p>
+    @endif
+    @if ($errors->has('date'))
+    <p class="text-danger">{{ $errors->first('date') }}</p>
+    @endif
+    @if ($errors->has('count'))
+    <p class="text-danger">{{ $errors->first('count') }}</p>
+    @endif
     <input type="submit" value="予約する" class="submit">
 </form>
 
@@ -53,7 +65,7 @@ $(function() {
         dateFormat: dateFormat,
         minDate: 0,
         onSelect: function(dateText, inst) {
-                    $("#date_val").val(dateText);
+                    $("#date").val(dateText);
         }
     });
 });
