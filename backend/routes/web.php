@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Reservation;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('top');
     //
 });
 Route::post('/reservation', function (Request $request) {
-    //
+    $reservation = new Reservation();
+    $reservation->user = $_POST['user'];
+    $reservation->count = $_POST['count'];
+    $reservation->datetime = $_POST['date_val'];
+    $reservation->save();
+    return view('reservation');
+
 });
 Route::delete('/reservation/{reservation}', function () {
     //
