@@ -15050,4 +15050,19 @@ a.text-dark:focus, a.text-dark:hover {
     }
 }
 
+.today{
+    background-color: orange;
+}
+
+th:nth-of-type(1), td:nth-of-type(1) {
+    color: red;
+}
+th:nth-of-type(7), td:nth-of-type(7) {
+    color: blue;
+}
+
+.res td{
+    height: 150px;
+}
+
 /*# sourceMappingURL=app.css.map*/
